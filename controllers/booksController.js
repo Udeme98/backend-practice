@@ -17,8 +17,20 @@ const getAllBooks = async (req, res) => {
   }
 };
 
-const getSingleBook = (req, res) => {
-  res.json({ message: `Get book with ID: ${req.params.id}` });
+const getSingleBook = async (req, res) => {
+  try {
+    const book = await Book.findById(req.params.id);
+    if (!book) {
+      return res.status(404).json({ message: "Book not found" });
+    }
+    res.status(200).json({
+      success: true,
+      message: "Book fetched successfully",
+      data: book,
+    });
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching book", error });
+  }
 };
 
 const addBook = async (req, res) => {
