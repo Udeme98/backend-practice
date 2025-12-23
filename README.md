@@ -14,13 +14,13 @@ npm install
 2. Add your MongoDB connection string and other environment variables:
    ```
    MONGODB_URI=your_mongodb_connection_string
-   PORT=5000
+   PORT=5001
    ```
 
 ## Running the Server
 
 ```bash
-npm start
+npm run dev
 ```
 
 The server will start on the configured port (default: 5000).
