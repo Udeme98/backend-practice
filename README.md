@@ -1,6 +1,6 @@
 # Books API
 
-A simple Node.js backend API for managing books using Express and MongoDB.
+A Node.js backend API for managing books with user authentication using Express and MongoDB.
 
 ## Installation
 
@@ -23,12 +23,33 @@ npm install
 npm run dev
 ```
 
-The server will start on the configured port (default: 5000).
+The server will start on the configured port (default: 5001) with automatic restart on file changes using Nodemon.
+
+## Features
+
+- Book management (Create, Read, Update, Delete)
+- User authentication with JWT
+- Password hashing with bcryptjs
+- Environment variable configuration with dotenv
+
+## API Endpoints
+
+- **Books**: `/api/books`
+- **Authentication**: `/api/auth`
 
 ## Project Structure
 
 - `server.js` - Main server file
 - `config/` - Database configuration
-- `models/` - MongoDB models
+- `models/` - MongoDB models (Book)
 - `controllers/` - Request handlers
-- `routes/` - API routes
+- `routes/` - API routes (bookRoutes, authRoutes)
+
+## Technologies Used
+
+- Express.js - Web framework
+- MongoDB - Database
+- Mongoose - ODM
+- JWT - Authentication
+- bcryptjs - Password hashing
+- Nodemon - Development tool
